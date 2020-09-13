@@ -32,3 +32,8 @@ out/
 
 ### VS Code ###
 .vscode/
+
+### utils ###
+data.sql
+schema.sql
+docker-compose.yml
