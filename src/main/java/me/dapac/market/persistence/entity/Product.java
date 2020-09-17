@@ -9,13 +9,18 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
     private String name;
+
     @Column(name = "bar_code")
     private  String barCode;
+
     @Column(name = "sale_price")
     private Double salePrice;
+
     @Column(name = "stock_quantity")
     private Integer stockQty;
+
     private Boolean state;
 
     @ManyToOne

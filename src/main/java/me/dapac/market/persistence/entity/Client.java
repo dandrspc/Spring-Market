@@ -9,11 +9,16 @@ public class Client {
 
     @Id
     private String id;
+
     private String name;
+
     @Column(name = "last_name")
     private String lastName;
+
     private String phone;
+
     private String address;
+
     private String email;
 
     @OneToMany(mappedBy = "client")

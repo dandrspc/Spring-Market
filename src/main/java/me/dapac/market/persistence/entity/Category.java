@@ -10,8 +10,11 @@ public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
     private  String description;
+
     private  Boolean state;
+
     @OneToMany(mappedBy = "category")
     private List<Product> products;
 
