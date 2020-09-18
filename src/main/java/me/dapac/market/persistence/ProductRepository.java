@@ -1,7 +1,7 @@
 package me.dapac.market.persistence;
 
 import me.dapac.market.persistence.crud.ProductCrudRepository;
-import me.dapac.market.persistence.entity.Product;
+import me.dapac.market.persistence.entity.ProductTable;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -12,24 +12,24 @@ public class ProductRepository {
 
     private ProductCrudRepository productCrudRepository;
 
-    public List<Product> getAll() {
-        return (List<Product>) productCrudRepository.findAll();
+    public List<ProductTable> getAll() {
+        return (List<ProductTable>) productCrudRepository.findAll();
     }
 
-    public List<Product> getByCategory(int category){
+    public List<ProductTable> getByCategory(int category){
         return productCrudRepository.findByCategoryId(category);
     }
 
-    public Optional<List<Product>> getScarceProducts(int quantity){
+    public Optional<List<ProductTable>> getScarceProducts(int quantity){
         return productCrudRepository.findByStockQtyLessThanAndState(quantity, true);
     }
 
-    public Optional<Product> getProduct(int productId){
+    public Optional<ProductTable> getProduct(int productId){
         return productCrudRepository.findById(productId);
     }
 
-    public Product createProduct(Product product){
-        return productCrudRepository.save(product);
+    public ProductTable createProduct(ProductTable productTable){
+        return productCrudRepository.save(productTable);
     }
 
     public void delete(int productId){

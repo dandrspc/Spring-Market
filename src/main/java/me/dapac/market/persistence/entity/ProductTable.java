@@ -4,13 +4,16 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "products")
-public class Product {
+public class ProductTable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     private String name;
+
+    @Column(name = "category_id")
+    private Integer categoryId;
 
     @Column(name = "bar_code")
     private  String barCode;
@@ -25,7 +28,7 @@ public class Product {
 
     @ManyToOne
     @JoinColumn(name = "id", insertable = false, updatable = false)
-    private Category category;
+    private CategoryTable categoryTable;
 
 
     public Integer getId() {
@@ -42,6 +45,14 @@ public class Product {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Integer getCategoryId() {
+        return categoryId;
+    }
+
+    public void setCategoryId(Integer categoryId) {
+        this.categoryId = categoryId;
     }
 
     public String getBarCode() {

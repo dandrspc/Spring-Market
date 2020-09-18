@@ -15,11 +15,11 @@ public class PurchaseProduct {
 
     @ManyToOne
     @JoinColumn(name = "purchases_id", insertable = false, updatable = false)
-    private Purchase purchase;
+    private PurchaseTable purchaseTable;
 
     @ManyToOne
     @JoinColumn(name = "product_id", insertable = false, updatable = false)
-    private Product product;
+    private ProductTable productTable;
 
     public PurchaseProductPK getId() {
         return id;
