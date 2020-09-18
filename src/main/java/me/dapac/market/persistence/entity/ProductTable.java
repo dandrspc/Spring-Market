@@ -28,7 +28,7 @@ public class ProductTable {
 
     @ManyToOne
     @JoinColumn(name = "id", insertable = false, updatable = false)
-    private CategoryTable categoryTable;
+    private CategoryTable category;
 
 
     public Integer getId() {

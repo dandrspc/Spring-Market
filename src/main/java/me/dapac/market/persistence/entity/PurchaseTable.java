@@ -21,7 +21,8 @@ public class PurchaseTable {
 
     @ManyToOne
     @JoinColumn(name = "id", insertable = false, updatable = false)
-    private ClientTable clientTable;
+    private ClientTable client;
+
     @OneToMany(mappedBy = "product")
     private List<PurchaseProduct> products;
 

@@ -19,7 +19,7 @@ public class PurchaseProduct {
 
     @ManyToOne
     @JoinColumn(name = "product_id", insertable = false, updatable = false)
-    private ProductTable productTable;
+    private ProductTable product;
 
     public PurchaseProductPK getId() {
         return id;

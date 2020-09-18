@@ -22,7 +22,7 @@ public class ClientTable {
     private String email;
 
     @OneToMany(mappedBy = "client")
-    private List<PurchaseTable> purchaseTables;
+    private List<PurchaseTable> purchases;
 
     public String getId() {
         return id;
