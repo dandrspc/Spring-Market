@@ -1,7 +1,7 @@
 package me.dapac.market.domain.service;
 
 import me.dapac.market.domain.Product;
-import me.dapac.market.domain.repository.ProductRepository;
+import me.dapac.market.domain.repository.IProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +12,7 @@ import java.util.Optional;
 public class ProductService {
 
     @Autowired
-    private ProductRepository productRepository;
+    private IProductRepository productRepository;
 
     public List<Product> getAll() {
         return productRepository.getAll();

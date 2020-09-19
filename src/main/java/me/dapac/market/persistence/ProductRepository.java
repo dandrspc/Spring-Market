@@ -1,6 +1,7 @@
 package me.dapac.market.persistence;
 
 import me.dapac.market.domain.Product;
+import me.dapac.market.domain.repository.IProductRepository;
 import me.dapac.market.persistence.crud.ProductCrudRepository;
 import me.dapac.market.persistence.entity.ProductTable;
 import me.dapac.market.persistence.mapper.ProductMapper;
@@ -11,7 +12,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Repository
-public class ProductRepository implements me.dapac.market.domain.repository.ProductRepository {
+public class ProductRepository implements IProductRepository {
 
     @Autowired
     private ProductCrudRepository productCrudRepository;
