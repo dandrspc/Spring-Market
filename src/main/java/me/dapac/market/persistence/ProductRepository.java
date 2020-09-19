@@ -21,7 +21,7 @@ public class ProductRepository implements me.dapac.market.domain.repository.Prod
     @Override
     public List<Product> getAll() {
         List<ProductTable> products = (List<ProductTable>) productCrudRepository.findAll();
-        return (List<Product>) mapper.toProduct((ProductTable) products);
+        return (List<Product>) mapper.toProducts(products);
     }
 
     @Override

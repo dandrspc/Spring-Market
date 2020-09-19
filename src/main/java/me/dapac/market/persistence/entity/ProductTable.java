@@ -1,5 +1,8 @@
 package me.dapac.market.persistence.entity;
 
+import org.hibernate.annotations.NotFound;
+import org.hibernate.annotations.NotFoundAction;
+
 import javax.persistence.*;
 
 @Entity
@@ -12,7 +15,7 @@ public class ProductTable {
 
     private String name;
 
-    @Column(name = "category_id")
+    @Column(name = "categories_id")
     private Integer categoryId;
 
     @Column(name = "bar_code")
@@ -26,8 +29,8 @@ public class ProductTable {
 
     private Boolean state;
 
-    @ManyToOne
-    @JoinColumn(name = "id", insertable = false, updatable = false)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "categories_id", nullable = false, insertable = false, updatable = false)
     private CategoryTable category;
 
 
@@ -85,5 +88,13 @@ public class ProductTable {
 
     public void setState(boolean state) {
         this.state = state;
+    }
+
+    public CategoryTable getCategory() {
+        return category;
+    }
+
+    public void setCategory(CategoryTable category) {
+        this.category = category;
     }
 }
