@@ -37,3 +37,4 @@ out/
 data.sql
 schema.sql
 docker-compose.yml
+*.json
