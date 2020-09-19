@@ -10,7 +10,7 @@ public class Purchase {
     private LocalDateTime date;
     private String paymentMethod;
     private String comment;
-    private boolean state;
+    private boolean active;
     private List<PurchaseItem> items;
 
     public int getId() {
@@ -53,12 +53,12 @@ public class Purchase {
         this.comment = comment;
     }
 
-    public boolean isState() {
-        return state;
+    public boolean isActive() {
+        return active;
     }
 
-    public void setState(boolean state) {
-        this.state = state;
+    public void setActive(boolean active) {
+        this.active = active;
     }
 
     public List<PurchaseItem> getItems() {

@@ -73,4 +73,20 @@ public class PurchaseTable {
     public void setState(String state) {
         this.state = state;
     }
+
+    public ClientTable getClient() {
+        return client;
+    }
+
+    public void setClient(ClientTable client) {
+        this.client = client;
+    }
+
+    public List<PurchaseProduct> getProducts() {
+        return products;
+    }
+
+    public void setProducts(List<PurchaseProduct> products) {
+        this.products = products;
+    }
 }

@@ -52,4 +52,20 @@ public class PurchaseProduct {
     public void setState(Boolean state) {
         this.state = state;
     }
+
+    public PurchaseTable getPurchaseTable() {
+        return purchaseTable;
+    }
+
+    public void setPurchaseTable(PurchaseTable purchaseTable) {
+        this.purchaseTable = purchaseTable;
+    }
+
+    public ProductTable getProduct() {
+        return product;
+    }
+
+    public void setProduct(ProductTable product) {
+        this.product = product;
+    }
 }
