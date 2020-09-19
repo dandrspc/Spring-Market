@@ -23,7 +23,7 @@ public class PurchaseTable {
     @JoinColumn(name = "id", insertable = false, updatable = false)
     private ClientTable client;
 
-    @OneToMany(mappedBy = "product")
+    @OneToMany(mappedBy = "purchaseTable", cascade = {CascadeType.ALL})
     private List<PurchaseProduct> products;
 
     public Integer getId() {
