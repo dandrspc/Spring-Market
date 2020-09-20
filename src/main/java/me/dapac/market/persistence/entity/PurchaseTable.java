@@ -11,19 +11,22 @@ public class PurchaseTable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Column(name = "client_id")
+
+    @Column(name = "clients_id")
     private String clientId;
+
     private LocalDateTime date;
     @Column(name = "payment_method")
+
     private String paymentMethod;
     private String comment;
     private String state;
 
     @ManyToOne
-    @JoinColumn(name = "id", insertable = false, updatable = false)
+    @JoinColumn(name = "clients_id", insertable = false, updatable = false)
     private ClientTable client;
 
-    @OneToMany(mappedBy = "purchaseTable", cascade = {CascadeType.ALL})
+    @OneToMany(mappedBy = "purchase", cascade = {CascadeType.ALL})
     private List<PurchaseProduct> products;
 
     public Integer getId() {

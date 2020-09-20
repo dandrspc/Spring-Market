@@ -33,7 +33,7 @@ public class PurchaseRepository implements IPurchaseRepository {
     @Override
     public Purchase save(Purchase purchase) {
         PurchaseTable purchaseTable = mapper.toPurchaseTable(purchase);
-        purchaseTable.getProducts().forEach(product -> product.setPurchaseTable(purchaseTable));
+        purchaseTable.getProducts().forEach(product -> product.setPurchase(purchaseTable));
         return mapper.toPurchase(purchaseCrudRepository.save(purchaseTable));
     }
 }

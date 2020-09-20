@@ -14,7 +14,7 @@ public interface PurchaseMapper {
 
     @Mappings({
             @Mapping(source = "products", target = "items"),
-            @Mapping(source = "state",target = "active")
+            @Mapping(source = "state", target = "active")
     })
     Purchase toPurchase(PurchaseTable purchase);
     List<Purchase> toPurchases(List<PurchaseTable> purchases);

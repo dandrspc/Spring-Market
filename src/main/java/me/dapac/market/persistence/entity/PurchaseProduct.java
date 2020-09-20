@@ -14,12 +14,12 @@ public class PurchaseProduct {
     private Boolean state;
 
     @ManyToOne
-    @MapsId("id")
+    @MapsId("purchasesId")
     @JoinColumn(name = "purchases_id", insertable = false, updatable = false)
-    private PurchaseTable purchaseTable;
+    private PurchaseTable purchase;
 
     @ManyToOne
-    @JoinColumn(name = "product_id", insertable = false, updatable = false)
+    @JoinColumn(name = "products_id", insertable = false, updatable = false)
     private ProductTable product;
 
     public PurchaseProductPK getId() {
@@ -54,12 +54,12 @@ public class PurchaseProduct {
         this.state = state;
     }
 
-    public PurchaseTable getPurchaseTable() {
-        return purchaseTable;
+    public PurchaseTable getPurchase() {
+        return purchase;
     }
 
-    public void setPurchaseTable(PurchaseTable purchaseTable) {
-        this.purchaseTable = purchaseTable;
+    public void setPurchase(PurchaseTable purchaseTable) {
+        this.purchase = purchaseTable;
     }
 
     public ProductTable getProduct() {

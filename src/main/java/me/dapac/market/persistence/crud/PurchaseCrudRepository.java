@@ -8,4 +8,5 @@ import java.util.Optional;
 
 public interface PurchaseCrudRepository extends CrudRepository<PurchaseTable, Integer> {
     Optional<List<PurchaseTable>> findByClientId(String clientId);
+
 }
