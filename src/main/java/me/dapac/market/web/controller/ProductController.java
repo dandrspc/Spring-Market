@@ -1,5 +1,9 @@
 package me.dapac.market.web.controller;
 
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import me.dapac.market.domain.Product;
 import me.dapac.market.domain.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,19 +21,29 @@ public class ProductController {
     private ProductService productService;
 
     @GetMapping("/all")
+    @ApiOperation("Get all supermarket products")
+    @ApiResponse(code = 200, message = "OK")
     public ResponseEntity<List<Product>> getAll() {
         return new ResponseEntity<>(productService.getAll(), HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Product> getProduct(@PathVariable("id") int productId) {
+    @ApiOperation("Search a product given and id")
+    @ApiResponses({
+            @ApiResponse(code = 200, message = "OK"),
+            @ApiResponse(code = 404, message = "Product not found")
+    })
+    public ResponseEntity<Product> getProduct(@ApiParam(value = "The id of the product",required = true, example = "7")
+                                                  @PathVariable("id") int productId) {
         return productService.getProduct(productId)
                 .map(product -> new ResponseEntity<>(product, HttpStatus.OK))
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
     }
+    @ApiOperation("Get all products, given a category id")
 
     @GetMapping("/category/{id}")
-    public ResponseEntity<List<Product>> getByCategory(@PathVariable("id") int categoryId) {
+    public ResponseEntity<List<Product>> getByCategory(@ApiParam(value = "Category id", required = true, example = "2")
+                                                           @PathVariable("id") int categoryId) {
         return productService.getByCategory(categoryId)
                 .map(products -> new ResponseEntity<>(products, HttpStatus.OK))
                 .orElse(new ResponseEntity<>(HttpStatus.NOT_FOUND));
