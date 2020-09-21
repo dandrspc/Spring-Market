@@ -12,6 +12,6 @@ import java.util.ArrayList;
 public class MarketUserDetailsService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        return new User("dapalca", "{noop}password", new ArrayList<>());
+        return new User("admin", "{noop}password", new ArrayList<>());
     }
 }
