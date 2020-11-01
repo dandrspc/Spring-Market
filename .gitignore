@@ -34,7 +34,7 @@ out/
 .vscode/
 
 ### utils ###
-data.sql
+src/main/java/me/dapac/market/persistence/sql/data.sql
 schema.sql
 docker-compose.yml
 *.json
